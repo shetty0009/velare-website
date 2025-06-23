@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velaré | Timeless Luxury</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Copperplate Gothic', sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .hero {
+      position: relative;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      filter: brightness(0.4);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: slideUp 1.2s ease-out;
+    }
+    .logo {
+      width: 130px;
+      margin-bottom: 10px;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #111;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+    .highlight h2 {
+      color: #fff;
+      font-style: italic;
+      font-size: 1.8rem;
+    }
+    .brand-logos.clickable {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .brand-logos.clickable div {
+      width: 160px;
+      text-align: center;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .brand-logos.clickable div:hover {
+      transform: scale(1.05);
+    }
+    .brand-logos.clickable img {
+      width: 100%;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .brand-logos.clickable p {
+      font-size: 1rem;
+      color: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translate(-50%, 60%); opacity: 0; }
+      to { transform: translate(-50%, -50%); opacity: 1; }
+    }
+    /* Dark/Light Mode Toggle */
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #d4af37;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    @media (max-width: 768px) {
+      .brand-logos.clickable div {
+        width: 45%;
+      }
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .hero-img {
+        height: 40vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-logos.clickable div {
+        width: 100%;
+      }
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+
+    body.light-mode {
+      background-color: #f5f5f5;
+      color: #111;
+    }
+    body.light-mode .hero-text h1,
+    body.light-mode h2,
+    body.light-mode .brand-logos p {
+      color: #111;
+    }
+    body.light-mode .btn {
+      background: #333;
+      color: #fff;
+    }
+    body.light-mode footer {
+      background: #eee;
+      color: #111;
+    }
+    body.light-mode footer a {
+      color: #000;
+    }
+    body.light-mode .login-prompt h2,
+    body.light-mode .login-prompt a {
+      color: #000;
+    }
+    body.light-mode .login-prompt button {
+      background-color: #333;
+      color: #fff;
+    }
+    .light-mode .login-prompt h2,
+    .light-mode .login-prompt a,
+    .light-mode .testimonials p,
+    .light-mode .testimonials strong {
+      color: #111;
+    }
+
+    .testimonials p,
+    .testimonials strong {
+      color: #f5f5f5;
+    }
+</style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleMode()">Toggle Mode</button>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="images/hero.jpg" alt="Hero Banner" class="hero-img" />
+    <div class="hero-text">
+      <img src="images/logo.png" alt="Velaré Logo" class="logo" />
+      <h1>Velaré</h1>
+      <p>Exclusive Luxury Watch Sale — Limited Time Offer!</p>
+      <a href="#brands" class="btn">Explore Collection</a>
+    </div>
+  </header>
+
+  
+  <!-- About Velaré -->
+  <section class="about">
+    <h2>About Velaré</h2>
+    <p>Velaré is a premium luxury watch company known for its timeless design, top-notch craftsmanship, and elegant style. We believe in more than just timekeeping — we help you define your moments.</p>
+  </section>
+
+  <!-- Our Collection -->
+  <section class="collection">
+    <h2>Our Collection</h2>
+    <div class="brand-logos clickable">
+      <div><img src="images/watch1.jpg" alt="Eleganza"><p>Velaré Eleganza</p></div>
+      <div><img src="images/watch2.jpg" alt="Noir"><p>Velaré Noir</p></div>
+      <div><img src="images/watch3.jpg" alt="Royale"><p>Velaré Royale</p></div>
+    </div>
+  </section>
+
+  <!-- Discover Your Style -->
+  <section class="style-guide">
+    <h2>Discover Your Style</h2>
+    <div class="brand-logos clickable">
+      <div><img src="images/minimal.jpg" alt="Minimal"><p>Minimal and Chic</p></div>
+      <div><img src="images/bold.jpg" alt="Bold"><p>Bold and Edgy</p></div>
+      <div><img src="images/luxe.jpg" alt="Luxe"><p>Luxe and Classy</p></div>
+      <div><img src="images/sporty.jpg" alt="Sporty"><p>Sporty and Adventurous</p></div>
+    </div>
+  </section>
+  
+<!-- Shop by Categories -->
+<section class="categories">
+  <h2>THE BEST WAY TO BUY THE PRODUCTS YOU LOVE</h2>
+  <div class="brand-logos clickable">
+    <div><img src="images/mens.jpg" alt="Men"><p>Men</p></div>
+    <div><img src="images/women.jpg" alt="Women"><p>Women</p></div>
+    <div><img src="images/kids.jpg" alt="Kids"><p>Kids</p></div>
+    <div><img src="images/smart.jpg" alt="Smart"><p>Smart Watches</p></div>
+  </div>
+</section>
+
+  
+  <section class="brands" id="brands">
+    <h2>Shop by Brands</h2>
+    <div class="brand-logos clickable">
+      <div><img src="images/titan.png" alt="Titan"><p>Titan</p></div>
+      <div><img src="images/fastrack.png" alt="Fastrack"><p>Fastrack</p></div>
+      <div><img src="images/sonata.png" alt="Sonata"><p>Sonata</p></div>
+      <div><img src="images/police.png" alt="Police"><p>Police</p></div>
+      <div><img src="images/kenneth.png" alt="Kenneth Cole"><p>Kenneth Cole</p></div>
+      <div><img src="images/anne.png" alt="Anne Klein"><p>Anne Klein</p></div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="new-arrivals">
+    <h2>New Arrivals</h2>
+    <div class="brand-logos clickable">
+      <div><img src="images/arrival1.jpg" alt="New Watch 1"><p>Classic Chrono</p></div>
+      <div><img src="images/arrival2.jpg" alt="New Watch 2"><p>Luxury Leather</p></div>
+      <div><img src="images/arrival3.jpg" alt="New Watch 3"><p>Modern Edge</p></div>
+      <div><img src="images/arrival4.jpg" alt="New Watch 4"><p>Urban Smart</p></div>
+    </div>
+  </section>
+
+  <!-- Login Prompt -->
+  <section class="login-prompt">
+    <h2 style="color: #fff;">LOGIN FOR THE BEST EXPERIENCE</h2>
+    <button style="background-color: #d4af37; color: #111; padding: 12px 30px; border: none; font-weight: bold; margin-top: 20px; cursor: pointer; border-radius: 4px;">LOGIN NOW</button>
+    <div style="margin-top: 10px;">
+      <a href="#" style="color: #f5f5f5; text-decoration: underline;">Create An Account</a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="brand-logos clickable">
+      <div><p>"Velaré Royale changed my style forever. Incredible elegance and class."<br><strong>– Rhea S.</strong></p></div>
+      <div><p>"Perfect combination of design and technology. Love my smart Velaré!"<br><strong>– Aarav K.</strong></p></div>
+      <div><p>"I gifted Velaré Eleganza to my father. It made his birthday memorable!"<br><strong>– Sneha P.</strong></p></div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer style="background-color: #000; color: #ccc; padding: 40px 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; max-width: 1200px; margin: auto;">
+    <div>
+      <h4 style="color: #fff; margin-bottom: 10px;">COLLECTIONS</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>Titan Automatics</li>
+        <li>Police Batman</li>
+        <li>Stellar</li>
+        <li>Raga Power Pearls</li>
+        <li>Nebula Jewels</li>
+        <li>Grandmaster</li>
+        <li>Maritime</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 10px;">CUSTOMER SERVICE</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>Payment Options</li>
+        <li>Track Order</li>
+        <li>Encircle Program</li>
+        <li>Find Velaré Stores</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 10px;">CONTACT US</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>1800-123-4567</li>
+        <li>support@velarewatches.com</li>
+        <li>Help & Contact</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 10px;">ABOUT VELARÉ</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>Brand Protection</li>
+        <li>Corporate</li>
+        <li>Careers</li>
+        <li>Blog</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 10px;">Download Velaré App</h4>
+      <img src="images/appstore.png" alt="App Store" style="height: 40px; margin-right: 10px;" />
+      <img src="images/googleplay.png" alt="Google Play" style="height: 40px;" />
+      <h4 style="margin-top: 20px; color: #fff;">Follow Us</h4>
+      <div style="font-size: 1.2rem; display: flex; gap: 10px; margin-top: 5px;">
+        <span>📘</span><span>📸</span><span>📌</span><span>▶️</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 30px; font-size: 0.85rem;">
+    <p>Want Help? <a href="#" style="color: #fff; text-decoration: underline;">Click Here</a> To Chat With Us On WhatsApp</p>
+    <p>Operating Hours: 10:00AM To 10:00PM | Monday To Sunday</p>
+    <p style="margin-top: 10px;">By Team Velaré &copy; 2025. All Rights Reserved.</p>
+  </div>
+</footer>
+<script>
+  function toggleMode() {
+    document.body.classList.toggle('light-mode');
+  }
+</script>
+</body>
+</html>
